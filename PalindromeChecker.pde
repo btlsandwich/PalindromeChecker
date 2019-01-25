@@ -16,14 +16,29 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  String theWorld = reverse(Word);
-  if (theWorld.equals(Word))
+  String theWorld = reverse(word);
+  String theHand = clearFormatting(word);
+  if (theWorld.equals(theHand))
     return true;
   return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    
-    return sNew;
+    String DIO = new String();
+    for (int i = str.length()-1; i >= 0; i--)
+    {
+      if (str.charAt(i) != ' ' && Character.isLetter(str.charAt(i)) == true)
+        DIO = DIO + str.substring(i,i+1);
+    }
+    return DIO.toLowerCase();
+}
+public String clearFormatting(String str)
+{
+  String Okuyasu = new String();
+  for (int i = 0; i < str.length(); i++)
+  {
+    if (str.charAt(i) != ' ' && Character.isLetter(str.charAt(i)) == true)
+      Okuyasu = Okuyasu + str.substring(i,i+1);
+  }
+  return Okuyasu.toLowerCase();
 }
